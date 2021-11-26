@@ -16,5 +16,8 @@ export default Styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: Colors.background
+    },
+    text: {
+        color: Colors.primary
     }
 })
