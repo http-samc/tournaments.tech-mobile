@@ -1,16 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { useNavigation } from '@react-navigation/core';
 
-const Team = (props) => {
-
+const About = () => {
     return (
         <View>
-            <Text>{props._id}</Text>
+            <Text></Text>
         </View>
     )
 }
 
-export default Team
+export default About
 
 const styles = StyleSheet.create({})

@@ -1,19 +1,36 @@
 import React, { useState, useEffect } from 'react'
-import Styles from '../theme'
-import { Text, FlatList, ActivityIndicator, View } from 'react-native'
-import { DataTable } from 'react-native-paper';
-import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+import Styles from '../theme/styles'
+import Colors from '../theme/colors'
+import { Text, ActivityIndicator, View } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { AntDesign } from '@expo/vector-icons';
 import { Dimensions } from 'react-native';
+import { useFonts } from 'expo-font';
+import { useNavigation } from '@react-navigation/core';
 
 const Leaderboard = () => {
-    const HEIGHT = Dimensions.get('window').height;
-    const ROWS = Math.round(HEIGHT / 60)
+    // Navigation config
+    const navigation = useNavigation();
 
+    // Leaderboard dimensions config
+    const HEIGHT = Dimensions.get('window').height;
+    const ROWS = Math.round(HEIGHT / 85)
+
+    // Configure fonts
+    const loaded = useFonts({
+        MontserratRegular: require('../assets/fonts/Montserrat-Regular.ttf'),
+        MontserratBold: require('../assets/fonts/Montserrat-Bold.ttf'),
+    });
+
+    // Configure states
     const [isLoading, setLoading] = useState(true)
     const [data, setData] = useState([])
     const [visibleLeaders, setVisibleLeaders] = useState([0, ROWS])
+
+    // Check for assets
+    if (!loaded)
+        return null
 
     const getLeaderboard = async () => {
         try {
@@ -48,45 +65,69 @@ const Leaderboard = () => {
         setVisibleLeaders([low, high])
     }
 
+    const goToTeam = (_id) => navigation.replace('Team', { _id: _id })
+
     useEffect(() => { getLeaderboard() }, [])
 
     leaders = data.slice(visibleLeaders[0], visibleLeaders[1])
 
     return (
         isLoading ? <ActivityIndicator /> : (
-            <SafeAreaView>
-                <ScrollView>
+            <SafeAreaView style={Styles.container}>
 
-                    <DataTable>
+                <Text style={Styles.screenTitle}>2021-22 Leaderboard</Text>
 
-                        <DataTable.Header>
-                            <DataTable.Title>Rank</DataTable.Title>
-                            <DataTable.Title>🥇</DataTable.Title>
-                            <DataTable.Title>🥈</DataTable.Title>
-                            <DataTable.Title>Team</DataTable.Title>
-                        </DataTable.Header>
+                <View style={Styles.table}>
 
-                        {
-                            leaders.map((team) => {
-                                return (
-                                    <DataTable.Row key={team._id}>
-                                        <DataTable.Cell style={{ color: "#fff" }}>{team.rank}</DataTable.Cell>
-                                        <DataTable.Cell>{team.goldBids}</DataTable.Cell>
-                                        <DataTable.Cell>{team.silverBids}</DataTable.Cell>
-                                        <DataTable.Cell>{team.codes[0]}</DataTable.Cell>
-                                    </DataTable.Row>
-                                )
-                            })
-                        }
+                    <View style={[Styles.tableRow, Styles.tableHeaderWrapper]}>
+                        <Text style={Styles.tableHeader}>Rank</Text>
+                        <Text style={Styles.tableHeader}>Bids</Text>
+                        <Text style={Styles.tableHeader}>Team</Text>
+                    </View>
 
-                    </DataTable>
+                    {
+                        leaders.map((team) => {
+                            return (
+                                <TouchableOpacity key={team._id} onPress={() => navigation.replace('Leaderboard')}>
+                                    <View style={[Styles.tableRow, Styles.teamRow]}>
+                                        <Text style={Styles.tableCell}>{team.rank}</Text>
+                                        <Text style={Styles.tableCell}>{team.goldBids + .5 * team.silverBids}</Text>
+                                        <Text style={[Styles.teamCodeCell]}>{team.codes[0]}</Text>
+                                    </View>
+                                </TouchableOpacity>
+                            )
+                        })
+                    }
+
+                </View>
+
+                <View style={Styles.paginationWrapper}>
+
                     <TouchableOpacity onPress={prevPage}>
-                        <AntDesign name="leftcircleo" size={24} color="black" />
+                        <AntDesign name='leftcircleo' style={Styles.paginationButton} size={24} color={Colors.primaryVariant} />
                     </TouchableOpacity>
+
+                    <Text style={Styles.paginationStatus}>{Math.round(visibleLeaders[0] / ROWS) + 1} of {Math.round(data.length / ROWS) + 1}</Text>
+
                     <TouchableOpacity onPress={nextPage}>
-                        <AntDesign name="rightcircleo" size={24} color="black" />
+                        <AntDesign name='rightcircleo' style={Styles.paginationButton} size={24} color={Colors.primaryVariant} />
                     </TouchableOpacity>
-                </ScrollView>
+
+                </View>
+
+                <View style={Styles.navBar}>
+                    <TouchableOpacity onPress={() => navigation.replace('Search')}>
+                        <AntDesign name='search1' size={24} color={Colors.primary} />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <AntDesign name='home' size={24} color={Colors.primary} />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => navigation.replace('About')}>
+                        <AntDesign name='infocirlceo' size={24} color={Colors.primary} />
+                    </TouchableOpacity>
+                </View>
 
             </SafeAreaView>
         )
