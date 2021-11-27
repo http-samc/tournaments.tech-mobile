@@ -7,5 +7,4 @@ export default Colors = {
     error: '#cf6679',
     onPrimary: '#000000',
     onBackground: '#222',
-    heading: '#fff'
 }

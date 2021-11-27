@@ -9,6 +9,9 @@ import { Dimensions } from 'react-native';
 import { useFonts } from 'expo-font';
 import { useNavigation } from '@react-navigation/core';
 
+import Row from '../components/Row';
+import Navbar from '../components/Navbar';
+
 const Leaderboard = () => {
     // Navigation config
     const navigation = useNavigation();
@@ -65,8 +68,6 @@ const Leaderboard = () => {
         setVisibleLeaders([low, high])
     }
 
-    const goToTeam = (_id) => navigation.replace('Team', { _id: _id })
-
     useEffect(() => { getLeaderboard() }, [])
 
     leaders = data.slice(visibleLeaders[0], visibleLeaders[1])
@@ -87,15 +88,7 @@ const Leaderboard = () => {
 
                     {
                         leaders.map((team) => {
-                            return (
-                                <TouchableOpacity key={team._id} onPress={() => navigation.replace('Leaderboard')}>
-                                    <View style={[Styles.tableRow, Styles.teamRow]}>
-                                        <Text style={Styles.tableCell}>{team.rank}</Text>
-                                        <Text style={Styles.tableCell}>{team.goldBids + .5 * team.silverBids}</Text>
-                                        <Text style={[Styles.teamCodeCell]}>{team.codes[0]}</Text>
-                                    </View>
-                                </TouchableOpacity>
-                            )
+                            return <Row key={team._id} team={team} />
                         })
                     }
 
@@ -115,19 +108,7 @@ const Leaderboard = () => {
 
                 </View>
 
-                <View style={Styles.navBar}>
-                    <TouchableOpacity onPress={() => navigation.replace('Search')}>
-                        <AntDesign name='search1' size={24} color={Colors.primary} />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity>
-                        <AntDesign name='home' size={24} color={Colors.primary} />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => navigation.replace('About')}>
-                        <AntDesign name='infocirlceo' size={24} color={Colors.primary} />
-                    </TouchableOpacity>
-                </View>
+                <Navbar from='Home' />
 
             </SafeAreaView>
         )

@@ -9,7 +9,7 @@ export default Styles = StyleSheet.create({
     screenTitle: {
         fontSize: 20,
         textAlign: 'center',
-        color: Colors.heading,
+        color: Colors.primary,
         marginVertical: 10,
         fontFamily: 'MontserratBold'
     },
@@ -40,7 +40,7 @@ export default Styles = StyleSheet.create({
     tableHeader: {
         flex: 1,
         justifyContent: 'center',
-        color: Colors.primary,
+        color: Colors.primaryVariant,
         fontFamily: 'MontserratBold'
     },
     tableRow: {
