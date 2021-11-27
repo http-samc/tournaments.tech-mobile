@@ -7,10 +7,19 @@ export default Styles = StyleSheet.create({
         height: '100%',
     },
     screenTitle: {
-        fontSize: 20,
+        fontSize: 25,
+        paddingHorizontal: 5,
         textAlign: 'center',
         color: Colors.primary,
         marginVertical: 10,
+        fontFamily: 'MontserratBold'
+    },
+    screenSubtitle: {
+        fontSize: 15,
+        paddingHorizontal: 5,
+        paddingBottom: 5,
+        textAlign: 'center',
+        color: Colors.textImportant,
         fontFamily: 'MontserratBold'
     },
     navBar: {
@@ -81,5 +90,40 @@ export default Styles = StyleSheet.create({
         width: 60,
         textAlign: 'center',
         fontFamily: 'MontserratBold'
+    },
+
+    // TeamView
+    teamSectionTitle: {
+        fontFamily: 'MontserratBold',
+        fontSize: 25,
+        color: Colors.secondary,
+        marginTop: 15,
+        textAlign: 'center',
+    },
+    teamSection: {
+        margin: 10,
+        padding: 10,
+        backgroundColor: Colors.onBackground,
+        borderRadius: 10
+        // intog w/ table style
+    },
+    teamStat: {
+        fontFamily: 'MontserratRegular',
+        fontSize: 25,
+        color: Colors.primaryVariant,
+        textAlign: 'center',
+    },
+    tournName: {
+        fontFamily: 'MontserratRegular',
+        fontSize: 20,
+        color: Colors.textImportant,
+        textAlign: 'center',
+        marginBottom: 5
+    },
+    tournStat: {
+        fontFamily: 'MontserratRegular',
+        fontSize: 20,
+        color: Colors.primaryVariant,
+        textAlign: 'left',
     }
 })
