@@ -125,5 +125,37 @@ export default Styles = StyleSheet.create({
         fontSize: 20,
         color: Colors.primaryVariant,
         textAlign: 'left',
+    },
+
+    // Search view
+    searchBar: {
+        fontFamily: 'MontserratRegular',
+        alignSelf: 'center',
+        borderRadius: 10,
+        borderColor: Colors.onBackground,
+        borderWidth: 3,
+        padding: 15,
+        width: '60%',
+        maxWidth: 250,
+        marginVertical: 15,
+        color: Colors.secondary
+    },
+    resultsContainer: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        height: '100%'
+    },
+    result: {
+        backgroundColor: Colors.onBackground,
+        padding: 15,
+        borderRadius: 10,
+        width: '60%',
+        maxWidth: 250,
+        marginBottom: 10,
+    },
+    resultText: {
+        color: Colors.primaryVariant,
+        fontFamily: 'MontserratRegular',
+        textAlign: 'center'
     }
 })

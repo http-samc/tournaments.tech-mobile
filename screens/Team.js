@@ -49,7 +49,7 @@ const Team = ({ route, navigation }) => {
             <SafeAreaView style={Styles.container}>
                 <Text style={Styles.screenTitle}>{team.codes[0]}</Text>
                 <Text style={Styles.screenSubtitle}>{team.tournaments[0].fullNames}</Text>
-                <ScrollView showsVerticalScrollIndicator={false}>
+                <ScrollView showsVerticalScrollIndicator={false} style={{ marginBottom: 35 }}>
                     <Text style={Styles.teamSectionTitle}>Comp. Performance</Text>
                     <View style={Styles.teamSection}>
                         <Text style={Styles.teamStat}>OTR Score 🧮 : {team.otrScore}</Text>
@@ -70,7 +70,7 @@ const Team = ({ route, navigation }) => {
                     </View>
                     <Text style={Styles.teamSectionTitle}>Tournaments (21-22)</Text>
                     {
-                        team.tournaments.map((tourn) => {
+                        team.tournaments.map((tourn, idx) => {
 
                             // Legacy code from web
                             if (!tourn.eliminated) var elim = "championed 🎖️";
@@ -101,7 +101,7 @@ const Team = ({ route, navigation }) => {
                             }
 
                             return (
-                                <View style={Styles.teamSection}>
+                                <View style={Styles.teamSection} key={idx}>
                                     <Text style={Styles.tournName}>{tourn.name}</Text>
                                     <Text style={Styles.tournStat}>
                                         OTR Comp. 📚: {tourn.tournamentComp}
