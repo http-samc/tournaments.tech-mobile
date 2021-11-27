@@ -1,10 +1,16 @@
 import { StyleSheet } from 'react-native'
 import Colors from '../theme/colors'
 
-export default Styles = StyleSheet.create({
+var Styles = StyleSheet.create({
+    containerNoFlex: {
+        backgroundColor: Colors.background,
+        height: '100%',
+    },
     container: {
         backgroundColor: Colors.background,
         height: '100%',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
     },
     screenTitle: {
         fontSize: 25,
@@ -33,7 +39,22 @@ export default Styles = StyleSheet.create({
         backgroundColor: Colors.onBackground,
         bottom: 0,
         left: 0,
-        right: 0
+        right: 0,
+    },
+    text: {
+        color: Colors.primaryVariant,
+        fontFamily: 'MontserratRegular',
+        padding: 20,
+        textAlign: 'center',
+        maxWidth: 250,
+        alignSelf: 'center'
+    },
+    button: {
+        backgroundColor: Colors.onBackground,
+        borderRadius: 10,
+        width: 200,
+        alignSelf: 'center',
+        marginTop: 15
     },
 
     // Table
@@ -41,7 +62,10 @@ export default Styles = StyleSheet.create({
         margin: 10,
         padding: 10,
         backgroundColor: Colors.onBackground,
-        borderRadius: 10
+        borderRadius: 10,
+        width: '95%',
+        maxWidth: 600,
+        alignSelf: 'center',
     },
     tableHeaderWrapper: {
         marginBottom: 10,
@@ -104,7 +128,10 @@ export default Styles = StyleSheet.create({
         margin: 10,
         padding: 10,
         backgroundColor: Colors.onBackground,
-        borderRadius: 10
+        borderRadius: 10,
+        width: '95%',
+        maxWidth: 600,
+        alignSelf: 'center'
         // intog w/ table style
     },
     teamStat: {
@@ -136,7 +163,7 @@ export default Styles = StyleSheet.create({
         borderWidth: 3,
         padding: 15,
         width: '60%',
-        maxWidth: 250,
+        maxWidth: 350,
         marginVertical: 15,
         color: Colors.secondary
     },
@@ -150,7 +177,7 @@ export default Styles = StyleSheet.create({
         padding: 15,
         borderRadius: 10,
         width: '60%',
-        maxWidth: 250,
+        maxWidth: 350,
         marginBottom: 10,
     },
     resultText: {
@@ -159,3 +186,5 @@ export default Styles = StyleSheet.create({
         textAlign: 'center'
     }
 })
+
+export default Styles = Styles

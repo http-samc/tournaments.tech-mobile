@@ -52,16 +52,16 @@ const Leaderboard = () => {
     }
 
     const prevPage = () => {
-        low = visibleLeaders[0] - ROWS
+        var low = visibleLeaders[0] - ROWS
         if (low < 0) low = 0
-        high = low + ROWS
+        var high = low + ROWS
 
         setVisibleLeaders([low, high])
     }
 
     const nextPage = () => {
-        low = visibleLeaders[1]
-        high = visibleLeaders[1] + ROWS
+        var low = visibleLeaders[1]
+        var high = visibleLeaders[1] + ROWS
 
         if (high >= data.length + ROWS || low <= -ROWS) return
 
@@ -70,11 +70,11 @@ const Leaderboard = () => {
 
     useEffect(() => { getLeaderboard() }, [])
 
-    leaders = data.slice(visibleLeaders[0], visibleLeaders[1])
+    const leaders = data.slice(visibleLeaders[0], visibleLeaders[1])
 
     return (
         isLoading ? <ActivityIndicator /> : (
-            <SafeAreaView style={Styles.container}>
+            <SafeAreaView style={Styles.containerNoFlex}>
 
                 <Text style={Styles.screenTitle}>2021-22 Leaderboard</Text>
 

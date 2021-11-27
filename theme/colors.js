@@ -1,4 +1,4 @@
-export default Colors = {
+var Colors = {
     primary: '#bb86fc',
     primaryVariant: '#20c997',
     secondary: '#0dcaf0',
@@ -10,3 +10,5 @@ export default Colors = {
     onBackground: '#222',
     //onBackground: '#212529'
 }
+
+export default Colors = Colors
