@@ -26,7 +26,8 @@ var Styles = StyleSheet.create({
     },
     navBar: {
         backgroundColor: Colors.onBackground,
-        marginBottom: -5
+        marginBottom: -5,
+        borderTopColor: Colors.secondary
     },
     text: {
         color: Colors.primaryVariant,
