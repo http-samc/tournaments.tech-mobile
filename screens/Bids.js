@@ -33,7 +33,7 @@ const Bids = () => {
 
 
     if (isLoading) return (
-        <View style={Styles.container}>
+        <View style={Styles.loadingContainer}>
             <ActivityIndicator
                 collor={Colors.primary}
             />

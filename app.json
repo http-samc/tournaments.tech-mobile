@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "tournaments.tech-mobile",
-    "slug": "tournaments.tech-mobile",
+    "name": "tournaments.tech",
+    "slug": "tournaments-tech",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

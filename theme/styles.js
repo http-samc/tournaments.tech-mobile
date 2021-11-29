@@ -8,6 +8,13 @@ var Styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-between'
     },
+    loadingContainer: {
+        backgroundColor: Colors.background,
+        height: '100%',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     screenTitle: {
         fontSize: 25,
         paddingHorizontal: 5,
