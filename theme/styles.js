@@ -2,10 +2,6 @@ import { StyleSheet } from 'react-native'
 import Colors from '../theme/colors'
 
 var Styles = StyleSheet.create({
-    containerNoFlex: {
-        backgroundColor: Colors.background,
-        height: '100%',
-    },
     container: {
         backgroundColor: Colors.background,
         height: '100%',
@@ -29,17 +25,8 @@ var Styles = StyleSheet.create({
         fontFamily: 'MontserratBold'
     },
     navBar: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        position: 'absolute',
-        paddingBottom: 20,
-        paddingTop: 10,
-        width: '100%',
         backgroundColor: Colors.onBackground,
-        bottom: 0,
-        left: 0,
-        right: 0,
+        marginBottom: -20
     },
     text: {
         color: Colors.primaryVariant,

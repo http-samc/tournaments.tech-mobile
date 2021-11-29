@@ -11,7 +11,7 @@ const Row = (props) => {
     const team = props.team
 
     return (
-        <TouchableOpacity onPress={() => navigation.replace('Team', { _id: team._id })}>
+        <TouchableOpacity onPress={() => navigation.navigate('Team', { _id: team._id })}>
             <View style={[Styles.tableRow, Styles.teamRow]}>
                 <Text style={Styles.tableCell}>{team.rank}</Text>
                 <Text style={Styles.tableCell}>{team.goldBids + .5 * team.silverBids}</Text>

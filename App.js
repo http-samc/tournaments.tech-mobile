@@ -1,24 +1,55 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar'
+import { Ionicons } from '@expo/vector-icons';
+
+import Colors from './theme/colors'
+import Styles from './theme/styles'
 
 import Leaderboard from './screens/Leaderboard'
 import Team from './screens/Team'
 import Search from './screens/Search'
 import About from './screens/About'
 
-const Stack = createNativeStackNavigator()
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen options={{ headerShown: false }} name="Leaderboard" component={Leaderboard} />
-        <Stack.Screen options={{ headerShown: false }} name="Team" component={Team} />
-        <Stack.Screen options={{ headerShown: false }} name="Search" component={Search} />
-        <Stack.Screen options={{ headerShown: false }} name="About" component={About} />
-      </Stack.Navigator>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let icon
+            let rn = route.name
+
+            if (rn === "Leaderboard")
+              icon = focused ? 'home' : 'home-outline'
+            else if (rn == "Search")
+              icon = focused ? 'search' : 'search-outline'
+            else if (rn == "About")
+              icon = focused ? 'information-circle' : 'information-circle-outline'
+
+            return <Ionicons name={icon} size={24} color={Colors.primary} />
+          },
+          tabBarButton: [
+            "Team"
+          ].includes(route.name)
+            ? () => {
+              return null
+            }
+            : undefined,
+          tabBarShowLabel: false,
+          tabBarStyle: Styles.navBar
+        })
+        }
+        initialRouteName={"Leaderboard"}
+      >
+        <Tab.Screen options={{ headerShown: false }} name="Search" component={Search} />
+        <Tab.Screen options={{ headerShown: false }} name="Leaderboard" component={Leaderboard} />
+        <Tab.Screen options={{ headerShown: false }} name="About" component={About} />
+        <Tab.Screen options={{ headerShown: false }} name="Team" component={Team} />
+      </Tab.Navigator>
       <StatusBar style="light" />
     </NavigationContainer>
   )

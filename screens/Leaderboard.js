@@ -10,7 +10,6 @@ import { useFonts } from 'expo-font';
 import { useNavigation } from '@react-navigation/core';
 
 import Row from '../components/Row';
-import Navbar from '../components/Navbar';
 
 const Leaderboard = () => {
     // Navigation config
@@ -74,7 +73,7 @@ const Leaderboard = () => {
 
     return (
         isLoading ? <ActivityIndicator /> : (
-            <SafeAreaView style={Styles.containerNoFlex}>
+            <SafeAreaView style={Styles.container}>
 
                 <Text style={Styles.screenTitle}>2021-22 Leaderboard</Text>
 
@@ -107,8 +106,6 @@ const Leaderboard = () => {
                     </TouchableOpacity>
 
                 </View>
-
-                <Navbar from='Home' />
 
             </SafeAreaView>
         )

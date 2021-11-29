@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Text, KeyboardAvoidingView, View } from 'react-native'
 import Styles from '../theme/styles'
-import Navbar from '../components/Navbar'
 import { ScrollView, TextInput } from 'react-native-gesture-handler'
 import Colors from '../theme/colors'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -49,7 +48,6 @@ const Search = () => {
                     }
                 </ScrollView>
             </SafeAreaView>
-            <Navbar from='Search' />
         </KeyboardAvoidingView>
     )
 }

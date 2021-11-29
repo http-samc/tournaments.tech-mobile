@@ -1,7 +1,6 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 import Styles from '../theme/styles'
-import Navbar from '../components/Navbar'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import * as Linking from 'expo-linking';
 import { TouchableOpacity } from 'react-native-gesture-handler'
@@ -43,7 +42,6 @@ const About = () => {
                     <Text style={Styles.text}>website</Text>
                 </TouchableOpacity>
             </View>
-            <Navbar from='About' />
         </SafeAreaView>
     )
 }

@@ -10,12 +10,8 @@ const Result = (props) => {
     const _id = props.team._id
     const code = props.team.codes[0]
 
-    const goToTeam = () => {
-        navigation.replace('Team', { _id: _id })
-    }
-
     return (
-        <TouchableOpacity style={Styles.result} onPress={goToTeam}>
+        <TouchableOpacity style={Styles.result} onPress={() => navigation.navigate('Team', { _id: _id })}>
             <Text style={Styles.resultText}>{code}</Text>
         </TouchableOpacity>
     )

@@ -4,7 +4,6 @@ import { ActivityIndicator } from 'react-native-paper'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Styles from '../theme/styles'
 import Colors from '../theme/colors'
-import Navbar from '../components/Navbar'
 import { ScrollView } from 'react-native-gesture-handler'
 
 const Team = ({ route, navigation }) => {
@@ -135,7 +134,6 @@ const Team = ({ route, navigation }) => {
                         })
                     }
                 </ScrollView>
-                <Navbar from='Team' />
             </SafeAreaView>
         )
     )
