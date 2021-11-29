@@ -26,7 +26,7 @@ var Styles = StyleSheet.create({
     },
     navBar: {
         backgroundColor: Colors.onBackground,
-        marginBottom: -20
+        marginBottom: -5
     },
     text: {
         color: Colors.primaryVariant,
@@ -46,7 +46,6 @@ var Styles = StyleSheet.create({
 
     // Table
     table: {
-        margin: 10,
         padding: 10,
         backgroundColor: Colors.onBackground,
         borderRadius: 10,
@@ -90,7 +89,8 @@ var Styles = StyleSheet.create({
     paginationWrapper: {
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: 20
     },
     paginationButton: {
         marginHorizontal: 3

@@ -17,7 +17,7 @@ const Leaderboard = () => {
 
     // Leaderboard dimensions config
     const HEIGHT = Dimensions.get('window').height;
-    const ROWS = Math.round(HEIGHT / 85)
+    const ROWS = Math.round(HEIGHT / 95)
 
     // Configure fonts
     const loaded = useFonts({

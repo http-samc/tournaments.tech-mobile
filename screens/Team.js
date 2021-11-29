@@ -48,7 +48,7 @@ const Team = ({ route, navigation }) => {
             <SafeAreaView style={Styles.container}>
                 <Text style={Styles.screenTitle}>{team.codes[0]}</Text>
                 <Text style={Styles.screenSubtitle}>{team.tournaments[0].fullNames}</Text>
-                <ScrollView showsVerticalScrollIndicator={false} style={{ marginBottom: 35 }}>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <Text style={Styles.teamSectionTitle}>Comp. Performance</Text>
                     <View style={Styles.teamSection}>
                         <Text style={Styles.teamStat}>OTR Score 🧮 : {team.otrScore}</Text>

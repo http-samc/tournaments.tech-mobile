@@ -3,13 +3,13 @@ import { Text, View } from 'react-native'
 import Styles from '../theme/styles'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import * as Linking from 'expo-linking';
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 
 const About = () => {
     return (
         <SafeAreaView style={Styles.container}>
-            <View>
-                <Text style={Styles.screenTitle}>tournaments.tech</Text>
+            <Text style={Styles.screenTitle}>tournaments.tech</Text>
+            <ScrollView>
                 <Text style={Styles.teamSectionTitle}>why?</Text>
                 <Text style={Styles.text}>
                     we made this resource because there were no holistic rankings for the public forum national circuit, and existing record curations fail to collect sufficient quality data.
@@ -41,7 +41,7 @@ const About = () => {
                 >
                     <Text style={Styles.text}>website</Text>
                 </TouchableOpacity>
-            </View>
+            </ScrollView>
         </SafeAreaView>
     )
 }
