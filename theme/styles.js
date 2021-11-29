@@ -172,6 +172,13 @@ var Styles = StyleSheet.create({
         color: Colors.primaryVariant,
         fontFamily: 'MontserratRegular',
         textAlign: 'center'
+    },
+
+    // Bids view
+    bidList: {
+        color: Colors.primaryVariant,
+        fontFamily: 'MontserratRegular',
+        padding: 20
     }
 })
 
