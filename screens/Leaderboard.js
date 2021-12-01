@@ -10,6 +10,7 @@ import { useFonts } from 'expo-font';
 import { useNavigation } from '@react-navigation/core';
 
 import Row from '../components/Row';
+import BlankRow from '../components/BlankRow'
 
 const Leaderboard = () => {
     // Navigation config
@@ -34,6 +35,8 @@ const Leaderboard = () => {
         try {
             const response = await fetch('http://tournaments.tech/leaders')
             const json = await response.json()
+            for (let i = 0; i < json.length % ROWS; i++)
+                json.push({ _id: null })
             setData(json)
         }
 
@@ -107,8 +110,10 @@ const Leaderboard = () => {
                 </View>
 
                 {
-                    leaders.map((team) => {
-                        return <Row key={team._id} team={team} />
+                    leaders.map((team, idx) => {
+                        if (!team._id)
+                            return <BlankRow key={idx} />
+                        return <Row key={idx} team={team} />
                     })
                 }
 
