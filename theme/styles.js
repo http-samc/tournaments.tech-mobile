@@ -97,7 +97,8 @@ var Styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 20
+        marginBottom: 20,
+        height: 50
     },
     paginationButton: {
         marginHorizontal: 5
