@@ -63,6 +63,20 @@ const Leaderboard = () => {
         setVisibleLeaders([low, high])
     }
 
+    const firstPage = () => {
+        var low = 0
+        var high = low + ROWS
+
+        setVisibleLeaders([low, high])
+    }
+
+    const lastPage = () => {
+        var high = data.length + 1
+        var low = high - ROWS
+
+        setVisibleLeaders([low, high])
+    }
+
     useEffect(() => { getLeaderboard() }, [])
 
     const leaders = data.slice(visibleLeaders[0], visibleLeaders[1])
@@ -102,6 +116,10 @@ const Leaderboard = () => {
 
             <View style={Styles.paginationWrapper}>
 
+                <TouchableOpacity onPress={firstPage}>
+                    <AntDesign name='banckward' style={Styles.paginationButton} size={20} color={Colors.primaryVariant} />
+                </TouchableOpacity>
+
                 <TouchableOpacity onPress={prevPage}>
                     <AntDesign name='leftcircleo' style={Styles.paginationButton} size={24} color={Colors.primaryVariant} />
                 </TouchableOpacity>
@@ -110,6 +128,10 @@ const Leaderboard = () => {
 
                 <TouchableOpacity onPress={nextPage}>
                     <AntDesign name='rightcircleo' style={Styles.paginationButton} size={24} color={Colors.primaryVariant} />
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={lastPage}>
+                    <AntDesign name='forward' style={Styles.paginationButton} size={20} color={Colors.primaryVariant} />
                 </TouchableOpacity>
 
             </View>

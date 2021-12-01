@@ -6,7 +6,7 @@ var Styles = StyleSheet.create({
         backgroundColor: Colors.background,
         height: '100%',
         flexDirection: 'column',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     loadingContainer: {
         backgroundColor: Colors.background,
@@ -33,7 +33,6 @@ var Styles = StyleSheet.create({
     },
     navBar: {
         backgroundColor: Colors.onBackground,
-        marginBottom: -5,
         borderTopColor: Colors.secondary
     },
     text: {
@@ -41,7 +40,7 @@ var Styles = StyleSheet.create({
         fontFamily: 'MontserratRegular',
         padding: 20,
         textAlign: 'center',
-        maxWidth: 250,
+        maxWidth: 600,
         alignSelf: 'center'
     },
     button: {
@@ -101,7 +100,7 @@ var Styles = StyleSheet.create({
         marginBottom: 20
     },
     paginationButton: {
-        marginHorizontal: 3
+        marginHorizontal: 5
     },
     paginationStatus: {
         color: Colors.primaryVariant,
