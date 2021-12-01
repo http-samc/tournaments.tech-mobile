@@ -124,7 +124,7 @@ const Leaderboard = () => {
                     <AntDesign name='leftcircleo' style={Styles.paginationButton} size={24} color={Colors.primaryVariant} />
                 </TouchableOpacity>
 
-                <Text style={Styles.paginationStatus}>{Math.round(visibleLeaders[0] / ROWS) + 1} of {Math.round(data.length / ROWS) + 1}</Text>
+                <Text style={Styles.paginationStatus}>{Math.round(visibleLeaders[0] / ROWS) + 1} of {Math.round(data.length / ROWS)}</Text>
 
                 <TouchableOpacity onPress={nextPage}>
                     <AntDesign name='rightcircleo' style={Styles.paginationButton} size={24} color={Colors.primaryVariant} />
