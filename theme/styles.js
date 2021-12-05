@@ -117,7 +117,7 @@ var Styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-start',
         color: Colors.textImportant,
-        fontFamily: 'MontserratRegular'
+        fontFamily: 'MontserratBold'
     },
 
     // Pagination

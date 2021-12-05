@@ -14,24 +14,29 @@ export const MarkdownStyles = {
     },
     table: {
         borderWidth: 1,
-        borderColor: Colors.secondary,
-        borderRadius: 3,
-    },
-    thead: {
-        color: Colors.primaryVariant,
-        fontFamily: 'MontserratBold',
+        padding: 10,
+        borderColor: Colors.onBackground,
+        borderRadius: 10,
+        backgroundColor: Colors.onBackground
     },
     tbody: {},
     th: {
         flex: 1,
         padding: 5,
+        color: Colors.primaryVariant,
+        fontFamily: 'MontserratBold'
     },
     tr: {
-        borderBottomWidth: 1,
-        borderColor: Colors.secondary,
-        color: Colors.primaryVariant,
+        borderBottomWidth: 10,
+        borderColor: Colors.onBackground,
+        color: Colors.secondary,
         fontFamily: 'MontserratRegular',
         flexDirection: 'row',
+        //height: 100
+    },
+    thead: {
+        color: Colors.primaryVariant,
+        fontFamily: 'MontserratBold',
     },
     td: {
         flex: 1,
@@ -39,6 +44,8 @@ export const MarkdownStyles = {
     },
     link: {
         textDecorationLine: 'none',
+        fontFamily: 'MontserratBold',
+        color: Colors.textImportant
     },
     paragraph: {
         marginTop: 10,
