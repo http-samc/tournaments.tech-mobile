@@ -52,7 +52,7 @@ var Styles = StyleSheet.create({
     specialLink: {
         fontFamily: 'MontserratBold',
         alignSelf: 'center',
-        color: Colors.error
+        color: Colors.primary
     },
     footer: {
         marginTop: 25,
@@ -65,11 +65,12 @@ var Styles = StyleSheet.create({
         color: Colors.primaryVariant,
         alignSelf: 'center',
     },
-    copyright: {
-        margin: 3,
+    updated: {
+        //margin: 3,
         alignSelf: 'center',
         fontFamily: 'MontserratBold',
-        color: Colors.onBackground
+        fontSize: 10,
+        color: Colors.error
     },
     button: {
         backgroundColor: Colors.onBackground,

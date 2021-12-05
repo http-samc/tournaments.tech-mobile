@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Text, View } from 'react-native'
 import Styles from '../theme/styles'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -6,8 +6,18 @@ import * as Linking from 'expo-linking';
 import { ScrollView, TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/core';
 import * as WebBrowser from 'expo-web-browser';
+import * as SecureStore from 'expo-secure-store';
 
 const About = () => {
+    const [updated, setUpdated] = useState('')
+
+    const getUpdated = async () => {
+        let updated = await SecureStore.getItemAsync("LAST_UPDATED")
+        setUpdated(updated)
+    }
+
+    useEffect(() => { getUpdated() }, [])
+
     return (
         <SafeAreaView style={Styles.container}>
             <Text style={Styles.screenTitle}>tournaments.tech</Text>
@@ -40,6 +50,7 @@ const About = () => {
                 </Text>
             </View>
             <Text style={Styles.footer} onPress={() => Linking.openURL('https://www.smrth.dev')}>created with 💙 & ☕ by <Text style={Styles.footerLink}>@smrth</Text></Text>
+            <Text style={Styles.updated}>{updated}</Text>
         </SafeAreaView>
     )
 }

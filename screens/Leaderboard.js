@@ -9,6 +9,7 @@ import { Dimensions } from 'react-native';
 import { useFonts } from 'expo-font';
 import { useNavigation } from '@react-navigation/core';
 import { ScrollView } from 'react-native-gesture-handler';
+import * as SecureStore from 'expo-secure-store';
 
 import Row from '../components/Row';
 import BlankRow from '../components/BlankRow'
@@ -33,6 +34,8 @@ const Leaderboard = () => {
     const [visibleLeaders, setVisibleLeaders] = useState([0, ROWS])
     const [refreshing, setRefreshing] = useState(false);
 
+    const save = async (key, val) => await SecureStore.setItemAsync(key, val)
+
     const getLeaderboard = async () => {
         try {
             const response = await fetch('http://tournaments.tech/leaders')
@@ -41,6 +44,8 @@ const Leaderboard = () => {
                 json.push({ _id: null })
 
             setData(json)
+            lastUpdated = `Last Updated: ${json[0].lastUpdated}`
+            await save("LAST_UPDATED", lastUpdated)
         }
 
         catch (error) {

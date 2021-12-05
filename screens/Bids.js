@@ -14,7 +14,7 @@ const Bids = () => {
 
     const [bidList, setBidList] = useState('')
     const [isLoading, setLoading] = useState(true)
-    const [refreshing, setRefreshing] = useState(false);
+    const [refreshing, setRefreshing] = useState(false)
 
     const onRefresh = useCallback(() => {
         setRefreshing(true);
@@ -45,7 +45,6 @@ const Bids = () => {
     }
 
     useEffect(() => { getBidList() }, [isLoading])
-
 
     if (isLoading) return (
         <View style={Styles.loadingContainer}>
