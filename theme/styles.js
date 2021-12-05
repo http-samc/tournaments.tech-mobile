@@ -40,8 +40,37 @@ var Styles = StyleSheet.create({
         fontFamily: 'MontserratRegular',
         padding: 20,
         textAlign: 'center',
-        maxWidth: 600,
+        maxWidth: 400,
         alignSelf: 'center'
+    },
+    link: {
+        fontFamily: 'MontserratBold',
+        color: Colors.textImportant,
+        alignSelf: 'center',
+        margin: 7
+    },
+    specialLink: {
+        fontFamily: 'MontserratBold',
+        alignSelf: 'center',
+        margin: 3,
+        color: Colors.error
+    },
+    footer: {
+        margin: 10,
+        alignSelf: 'center',
+        fontFamily: 'MontserratRegular',
+        color: Colors.secondary
+    },
+    footerLink: {
+        fontFamily: 'MontserratBold',
+        color: Colors.textImportant,
+        alignSelf: 'center',
+    },
+    copyright: {
+        margin: 3,
+        alignSelf: 'center',
+        fontFamily: 'MontserratBold',
+        color: Colors.onBackground
     },
     button: {
         backgroundColor: Colors.onBackground,
@@ -50,7 +79,6 @@ var Styles = StyleSheet.create({
         alignSelf: 'center',
         marginTop: 15
     },
-
     // Table
     table: {
         padding: 10,

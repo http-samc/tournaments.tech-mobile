@@ -2,13 +2,14 @@
   "expo": {
     "name": "tournaments.tech",
     "slug": "tournaments-tech",
+    "description": "Reliable and accurate rankings for the Public Forum national circuit!",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#121212"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -23,7 +24,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#BB6BD9"
       },
       "package": "dev.smrth.tech.tournaments"
     },
