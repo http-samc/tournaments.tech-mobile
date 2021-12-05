@@ -38,9 +38,9 @@ var Styles = StyleSheet.create({
     text: {
         color: Colors.primaryVariant,
         fontFamily: 'MontserratRegular',
-        padding: 20,
+        padding: 10,
         textAlign: 'center',
-        maxWidth: 400,
+        maxWidth: 300,
         alignSelf: 'center'
     },
     link: {
@@ -52,7 +52,6 @@ var Styles = StyleSheet.create({
     specialLink: {
         fontFamily: 'MontserratBold',
         alignSelf: 'center',
-        margin: 3,
         color: Colors.error
     },
     footer: {

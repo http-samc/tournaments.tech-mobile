@@ -39,6 +39,7 @@ const Leaderboard = () => {
             const json = await response.json()
             for (let i = 0; i < json.length % ROWS; i++)
                 json.push({ _id: null })
+
             setData(json)
         }
 

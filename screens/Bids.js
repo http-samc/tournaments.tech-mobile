@@ -65,6 +65,8 @@ const Bids = () => {
                         onRefresh={onRefresh}
                     />
                 }
+                showsVerticalScrollIndicator={true}
+                indicatorStyle='white'
             >
                 <Markdown style={MarkdownStyles} onLinkPress={onLinkPress}>
                     {bidList
