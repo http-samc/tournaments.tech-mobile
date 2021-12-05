@@ -42,7 +42,9 @@ const Search = () => {
                 </TextInput>
                 <ScrollView contentContainerStyle={Styles.resultsContainer}>
                     {
-                        results.map(result => {
+                        results.map((result, idx) => {
+                            if (idx > 7)
+                                return
                             return <Result key={result._id} team={result} />
                         })
                     }

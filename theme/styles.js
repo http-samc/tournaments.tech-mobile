@@ -193,7 +193,8 @@ var Styles = StyleSheet.create({
     resultsContainer: {
         flexDirection: 'column',
         alignItems: 'center',
-        height: '100%'
+        //height: '100%'
+        marginBottom: 100
     },
     result: {
         backgroundColor: Colors.onBackground,
