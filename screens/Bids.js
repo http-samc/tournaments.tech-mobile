@@ -5,7 +5,7 @@ import { Text, View } from 'react-native'
 import Markdown from 'react-native-markdown-display';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native-gesture-handler';
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator, RefreshControl } from 'react-native';
 import Colors from '../theme/colors';
 import { useNavigation } from '@react-navigation/core';
 
@@ -14,7 +14,13 @@ const Bids = () => {
 
     const [bidList, setBidList] = useState('')
     const [isLoading, setLoading] = useState(true)
+    const [refreshing, setRefreshing] = React.useState(false);
 
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        setLoading(true);
+        setRefreshing(false);
+    }, []);
 
     const getBidList = async () => {
         try {
@@ -37,7 +43,8 @@ const Bids = () => {
         navigation.navigate('Team', { _id: id })
         return false;
     }
-    useEffect(() => { getBidList() }, [])
+
+    useEffect(() => { getBidList() }, [isLoading])
 
 
     if (isLoading) return (
@@ -51,7 +58,14 @@ const Bids = () => {
     return (
         <SafeAreaView style={Styles.container}>
             <Text style={Styles.screenTitle}>2021-22 Bid List</Text>
-            <ScrollView>
+            <ScrollView
+                refreshControl={
+                    <RefreshControl
+                        refreshing={refreshing}
+                        onRefresh={onRefresh}
+                    />
+                }
+            >
                 <Markdown style={MarkdownStyles} onLinkPress={onLinkPress}>
                     {bidList
                         .replace('<p>', '')

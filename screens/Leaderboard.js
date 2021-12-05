@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import Styles from '../theme/styles'
 import Colors from '../theme/colors'
-import { Text, ActivityIndicator, View } from 'react-native'
+import { Text, RefreshControl, ActivityIndicator, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { AntDesign } from '@expo/vector-icons';
 import { Dimensions } from 'react-native';
 import { useFonts } from 'expo-font';
 import { useNavigation } from '@react-navigation/core';
+import { ScrollView } from 'react-native-gesture-handler';
 
 import Row from '../components/Row';
 import BlankRow from '../components/BlankRow'
@@ -30,6 +31,7 @@ const Leaderboard = () => {
     const [isLoading, setLoading] = useState(true)
     const [data, setData] = useState([])
     const [visibleLeaders, setVisibleLeaders] = useState([0, ROWS])
+    const [refreshing, setRefreshing] = React.useState(false);
 
     const getLeaderboard = async () => {
         try {
@@ -80,7 +82,13 @@ const Leaderboard = () => {
         setVisibleLeaders([low, high])
     }
 
-    useEffect(() => { getLeaderboard() }, [])
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        setLoading(true);
+        setRefreshing(false);
+    }, []);
+
+    useEffect(() => { getLeaderboard() }, [isLoading])
 
     const leaders = data.slice(visibleLeaders[0], visibleLeaders[1])
 
@@ -100,25 +108,33 @@ const Leaderboard = () => {
         <SafeAreaView style={Styles.container}>
 
             <Text style={Styles.screenTitle}>2021-22 Leaderboard</Text>
-
-            <View style={Styles.table}>
-
-                <View style={[Styles.tableRow, Styles.tableHeaderWrapper]}>
-                    <Text style={Styles.tableHeader}>Rank</Text>
-                    <Text style={Styles.tableHeader}>Bids</Text>
-                    <Text style={Styles.tableHeader}>Team</Text>
-                </View>
-
-                {
-                    leaders.map((team, idx) => {
-                        if (!team._id)
-                            return <BlankRow key={idx} />
-                        return <Row key={idx} team={team} />
-                    })
+            <ScrollView
+                contentContainerStyle={{ marginVertical: 20 }}
+                refreshControl={
+                    <RefreshControl
+                        refreshing={refreshing}
+                        onRefresh={onRefresh}
+                    />
                 }
+            >
+                <View style={Styles.table}>
 
-            </View>
+                    <View style={[Styles.tableRow, Styles.tableHeaderWrapper]}>
+                        <Text style={Styles.tableHeader}>Rank</Text>
+                        <Text style={Styles.tableHeader}>Bids</Text>
+                        <Text style={Styles.tableHeader}>Team</Text>
+                    </View>
 
+                    {
+                        leaders.map((team, idx) => {
+                            if (!team._id)
+                                return <BlankRow key={idx} />
+                            return <Row key={idx} team={team} />
+                        })
+                    }
+
+                </View>
+            </ScrollView>
             <View style={Styles.paginationWrapper}>
 
                 <TouchableOpacity onPress={firstPage}>
