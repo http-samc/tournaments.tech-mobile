@@ -43,7 +43,8 @@ const Team = ({ route, navigation }) => {
     )
     // Getting derived team stats
     var breakRecord = '0-0 (0.00%)'
-    if (team.breakRecord)
+
+    if (!team.breakRecord[0] == 0 && !team.breakRecord[1] == 0)
         breakRecord = `${Math.round(team.breakRecord[0] / (team.breakRecord[0] + team.breakRecord[1]) * 100)}% (${team.breakRecord[0]}-${team.breakRecord[1]})`
     var prelimRecord = `${Math.round(team.prelimRecord[0] / (team.prelimRecord[0] + team.prelimRecord[1]) * 100)}% (${team.prelimRecord[0]}-${team.prelimRecord[1]})`
 
