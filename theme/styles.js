@@ -66,7 +66,7 @@ var Styles = StyleSheet.create({
         alignSelf: 'center',
     },
     updated: {
-        //margin: 3,
+        marginBottom: 6,
         alignSelf: 'center',
         fontFamily: 'MontserratBold',
         fontSize: 10,

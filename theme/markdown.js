@@ -53,7 +53,8 @@ export const MarkdownStyles = {
         flex: 1,
         alignSelf: 'center',
         width: '100%',
-        fontFamily: 'MontserratRegular',
+        fontFamily: 'MontserratBold',
+        textAlign: 'center',
         color: Colors.error,
     },
     hardbreak: {
