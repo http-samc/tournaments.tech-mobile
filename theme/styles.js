@@ -56,7 +56,7 @@ var Styles = StyleSheet.create({
         color: Colors.error
     },
     footer: {
-        margin: 10,
+        marginTop: 25,
         alignSelf: 'center',
         fontFamily: 'MontserratRegular',
         color: Colors.secondary
