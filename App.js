@@ -12,6 +12,7 @@ import Team from './screens/Team'
 import Search from './screens/Search'
 import About from './screens/About'
 import Bids from './screens/Bids';
+import Browser from './screens/Browser';
 
 const Tab = createBottomTabNavigator();
 
@@ -36,7 +37,8 @@ export default function App() {
             return <Ionicons name={icon} size={24} color={Colors.primary} />
           },
           tabBarButton: [
-            "Team"
+            "Team",
+            "Browser"
           ].includes(route.name)
             ? () => {
               return null
@@ -50,9 +52,10 @@ export default function App() {
       >
         <Tab.Screen options={{ headerShown: false }} name="Search" component={Search} />
         <Tab.Screen options={{ headerShown: false }} name="Leaderboard" component={Leaderboard} />
-        <Tab.Screen options={{ headerShown: false }} name="About" component={About} />
         <Tab.Screen options={{ headerShown: false }} name="Bids" component={Bids} />
+        <Tab.Screen options={{ headerShown: false }} name="About" component={About} />
         <Tab.Screen options={{ headerShown: false }} name="Team" component={Team} />
+        <Tab.Screen options={{ headerShown: false }} name="Browser" component={Browser} />
       </Tab.Navigator>
       <StatusBar style="light" />
     </NavigationContainer>

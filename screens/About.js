@@ -4,8 +4,10 @@ import Styles from '../theme/styles'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import * as Linking from 'expo-linking';
 import { ScrollView, TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler'
+import { useNavigation } from '@react-navigation/core';
 
 const About = () => {
+    const navigation = useNavigation()
     return (
         <SafeAreaView style={Styles.container}>
             <Text style={Styles.screenTitle}>tournaments.tech</Text>
@@ -26,8 +28,8 @@ const About = () => {
                         ranking methodology
                     </Text>
                     <Text style={Styles.link}
-                        onPress={() => Linking.openURL('http://tournaments.tech/issues')}>
-                        submit feedback/issue
+                        onPress={() => navigation.navigate('Browser', { url: 'http://tournaments.tech/issues-mobile' })}>
+                        submit feedback/issues
                     </Text>
                     <Text style={Styles.link}
                         onPress={() => Linking.openURL('https://github.com/http-samc/tabroom-API')}>

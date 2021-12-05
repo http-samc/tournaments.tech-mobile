@@ -63,7 +63,7 @@ var Styles = StyleSheet.create({
     },
     footerLink: {
         fontFamily: 'MontserratBold',
-        color: Colors.textImportant,
+        color: Colors.primaryVariant,
         alignSelf: 'center',
     },
     copyright: {
@@ -129,7 +129,7 @@ var Styles = StyleSheet.create({
         height: 50
     },
     paginationButton: {
-        marginHorizontal: 5
+        marginHorizontal: 7
     },
     paginationStatus: {
         color: Colors.primaryVariant,
