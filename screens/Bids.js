@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import Styles from '../theme/styles'
 import { MarkdownStyles } from '../theme/markdown';
 import { Text, View } from 'react-native'
@@ -14,9 +14,9 @@ const Bids = () => {
 
     const [bidList, setBidList] = useState('')
     const [isLoading, setLoading] = useState(true)
-    const [refreshing, setRefreshing] = React.useState(false);
+    const [refreshing, setRefreshing] = useState(false);
 
-    const onRefresh = React.useCallback(() => {
+    const onRefresh = useCallback(() => {
         setRefreshing(true);
         setLoading(true);
         setRefreshing(false);

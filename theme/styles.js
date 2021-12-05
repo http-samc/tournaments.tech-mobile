@@ -194,7 +194,6 @@ var Styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         //height: '100%'
-        marginBottom: 100
     },
     result: {
         backgroundColor: Colors.onBackground,

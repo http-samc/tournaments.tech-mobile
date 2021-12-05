@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import Styles from '../theme/styles'
 import Colors from '../theme/colors'
 import { Text, RefreshControl, ActivityIndicator, View } from 'react-native'
@@ -31,7 +31,7 @@ const Leaderboard = () => {
     const [isLoading, setLoading] = useState(true)
     const [data, setData] = useState([])
     const [visibleLeaders, setVisibleLeaders] = useState([0, ROWS])
-    const [refreshing, setRefreshing] = React.useState(false);
+    const [refreshing, setRefreshing] = useState(false);
 
     const getLeaderboard = async () => {
         try {
@@ -76,13 +76,13 @@ const Leaderboard = () => {
     }
 
     const lastPage = () => {
-        var high = data.length + 1
+        var high = data.length
         var low = high - ROWS
 
         setVisibleLeaders([low, high])
     }
 
-    const onRefresh = React.useCallback(() => {
+    const onRefresh = useCallback(() => {
         setRefreshing(true);
         setLoading(true);
         setRefreshing(false);
