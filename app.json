@@ -26,7 +26,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#BB6BD9"
       },
-      "package": "dev.smrth.tech.tournaments"
+      "package": "dev.smrth.tech.tournaments",
+      "googleServicesFile": "./assets/google-services.json"
     },
     "web": {
       "favicon": "./assets/favicon.png"

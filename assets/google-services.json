@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "874699293081",
+    "project_id": "tournaments-tech-mobile-158f7",
+    "storage_bucket": "tournaments-tech-mobile-158f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874699293081:android:801769061ae53147765308",
+        "android_client_info": {
+          "package_name": "dev.smrth.tech.tournaments"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "874699293081-tr3hv2nih8rhleger4dlakvvsf3r89nv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUNocZEOXQNjE3dYu1FDrYXrsmZ7QN1Ug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "874699293081-tr3hv2nih8rhleger4dlakvvsf3r89nv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
