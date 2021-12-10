@@ -62,6 +62,8 @@ const Bids = () => {
                     <RefreshControl
                         refreshing={refreshing}
                         onRefresh={onRefresh}
+                        tintColor={Colors.error}
+                        colors={[Colors.error]}
                     />
                 }
                 showsVerticalScrollIndicator={true}

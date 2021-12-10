@@ -120,6 +120,8 @@ const Leaderboard = () => {
                     <RefreshControl
                         refreshing={refreshing}
                         onRefresh={onRefresh}
+                        tintColor={Colors.error}
+                        colors={[Colors.error]}
                     />
                 }
             >
