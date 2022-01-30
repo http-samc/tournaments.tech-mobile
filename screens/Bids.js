@@ -39,7 +39,7 @@ const Bids = () => {
     }
 
     const onLinkPress = (url) => {
-        id = url.replace('http://tournaments.tech/?team=', '')
+        id = url.replace('http://localhost:8080//?team=', '')
         navigation.navigate('Team', { _id: id })
         return false;
     }

@@ -14,7 +14,7 @@ const Search = () => {
 
     const startQuery = async () => {
         try {
-            const response = await fetch(`http://tournaments.tech/query?term=${query}`)
+            const response = await fetch(`http://localhost:8080//query?term=${query}`)
             const json = await response.json()
             setResults(json)
         }

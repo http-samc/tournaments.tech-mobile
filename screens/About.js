@@ -37,7 +37,7 @@ const About = () => {
                     ranking methodology
                 </Text>
                 <Text style={Styles.link}
-                    onPress={() => WebBrowser.openBrowserAsync('http://tournaments.tech/issues-mobile')}>
+                    onPress={() => WebBrowser.openBrowserAsync('http://localhost:8080//issues-mobile')}>
                     submit feedback/issues
                 </Text>
                 <Text style={Styles.link}
@@ -45,7 +45,7 @@ const About = () => {
                     view our source code
                 </Text>
                 <Text style={Styles.link}
-                    onPress={() => Linking.openURL('http://tournaments.tech/')}>
+                    onPress={() => Linking.openURL('http://localhost:8080//')}>
                     tournaments.tech (web)
                 </Text>
             </View>
