@@ -18,7 +18,7 @@ const Team = ({ route, navigation }) => {
     const getTeam = async () => {
         try {
             const _id = route.params._id
-            const response = await fetch(`http://localhost:8080//query?team=${_id}`)
+            const response = await fetch(`http://tournaments.tech/query?team=${_id}`)
             const json = await response.json()
             setTeam(json)
         }

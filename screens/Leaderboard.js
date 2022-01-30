@@ -38,7 +38,7 @@ const Leaderboard = () => {
 
     const getLeaderboard = async () => {
         try {
-            const response = await fetch('http://localhost:8080//leaders')
+            const response = await fetch('http://tournaments.tech/leaders')
             const json = await response.json()
             for (let i = 0; i < json.length % ROWS; i++)
                 json.push({ _id: null })
