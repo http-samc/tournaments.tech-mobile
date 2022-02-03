@@ -67,7 +67,7 @@ const Team = ({ route, navigation }) => {
                 </View>
                 <Text style={Styles.teamSectionTitle}>Individual Metrics</Text>
                 <View style={Styles.teamSection}>
-                    <Text style={Styles.teamStat}>Comp. Break Rate 🍾 : {team.breakPCT * 100}%</Text>
+                    <Text style={Styles.teamStat}>Comp. Break Rate 🍾 : {Math.round(team.breakPCT * 100)}%</Text>
                     <Text style={Styles.teamStat}>Prelim Record 🙌 : {prelimRecord}</Text>
                     <Text style={Styles.teamStat}>Break Record 🎉 : {breakRecord}</Text>
                 </View>
